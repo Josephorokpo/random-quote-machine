@@ -60,5 +60,5 @@ src/
 - App.js              # Root component that renders QuoteBox
 - App.css             # Styles for the App component
 - index.js            # Entry point for the React application
-- reportWebVitals.js  # Optional performance monitoring
+ 
 
