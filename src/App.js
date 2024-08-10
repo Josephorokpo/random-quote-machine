@@ -1,14 +1,11 @@
-
 import './App.css';
+import QuoteBox from './components/QuoteBox';  // Import the QuoteBox component
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
+        <QuoteBox />  {/* Add the QuoteBox component */}
       </header>
     </div>
   );
