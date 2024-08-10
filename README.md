@@ -53,7 +53,7 @@ Tweet the quote: Click on the "Tweet" button to share the current quote on Twitt
 
 
 ## Project Structure
-
+"""
 src/
 ├── components/
 │   └── QuoteBox.js       # Component responsible for displaying quotes and handling user interactions
@@ -61,4 +61,4 @@ src/
 ├── App.css               # Styles for the App component
 ├── index.js              # Entry point for the React application
 └── reportWebVitals.js    # Optional performance monitoring
-
+"""
