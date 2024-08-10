@@ -22,7 +22,7 @@ This project is a Random Quote Machine built with React.js, designed to display 
 
 ##Live Demo
 
-Check out the live demo of the Random Quote Machine [here]().
+Check out the live demo of the Random Quote Machine [here](https://josephorokpo.github.io/random-quote-machine/).
 
 ##Installation
 To run this project locally, follow these steps:
