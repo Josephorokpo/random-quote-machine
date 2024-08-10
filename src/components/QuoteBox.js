@@ -18,7 +18,7 @@ const QuoteBox = () => {
   return (
     <div id="quote-box">
       <p id="text">"{quote}"</p>
-      <p id="author">- {author}</p>
+      <p id="author">By {author}</p>
       <button id="new-quote" onClick={fetchRandomQuote}>
         New Quote
       </button>
