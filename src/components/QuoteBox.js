@@ -3,12 +3,24 @@ import React, { useState, useEffect } from "react";
 const QuoteBox = () => {
   const [quote, setQuote] = useState("");
   const [author, setAuthor] = useState("");
+  const [error, setError] = useState(null); // State to handle errors
 
   const fetchRandomQuote = async () => {
-    const response = await fetch("https://api.quotable.io/random");
-    const data = await response.json();
-    setQuote(data.content);
-    setAuthor(data.author);
+    try {
+      const response = await fetch("https://api.quotable.io/random");
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      const data = await response.json();
+      setQuote(data.content);
+      setAuthor(data.author);
+      setError(null); // Clear any previous errors
+    } catch (error) {
+      console.error("Fetch error:", error);
+      setError("Failed to fetch quote. Please try again later.");
+      setQuote(""); // Clear the quote if there's an error
+      setAuthor(""); // Clear the author if there's an error
+    }
   };
 
   useEffect(() => {
@@ -17,8 +29,14 @@ const QuoteBox = () => {
 
   return (
     <div id="quote-box">
-      <p id="text">"{quote}"</p>
-      <p id="author">By {author}</p>
+      {error ? (
+        <p id="error" style={{ color: "red" }}>{error}</p> // Display error message
+      ) : (
+        <>
+          <p id="text">"{quote}"</p>
+          <p id="author">By {author}</p>
+        </>
+      )}
       <button id="new-quote" onClick={fetchRandomQuote}>
         New Quote
       </button>
